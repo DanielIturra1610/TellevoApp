@@ -12,7 +12,9 @@
   </ion-header>
 
   <h1>Eres: </h1>
-<ion-button id="conductorButton">Conductor</ion-button>
-<ion-button id="pasajeroButton">Pasajero</ion-button>
+  <div class="ion-text-center">
+    <ion-button id="conductorButton" (click)="redirigeLoginConductor()">Conductor</ion-button>
+    <ion-button id="pasajeroButton" (click)="redirigeLoginPasajero()">Pasajero</ion-button>
+  </div>
 
 </ion-content>
