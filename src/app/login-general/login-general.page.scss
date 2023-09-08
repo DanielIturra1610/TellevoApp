@@ -1,0 +1,31 @@
+ion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  ion-button {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #1877f2; /* Azul de Facebook */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  ion-button:hover {
+    background-color: #1566e0; /* Cambio de color al pasar el ratón */
+  }
+  
+  ion-button:first-child {
+    margin-bottom: 20px;
+  }
+  
