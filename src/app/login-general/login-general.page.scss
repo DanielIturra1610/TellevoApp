@@ -12,17 +12,15 @@ ion-content {
   ion-button {
     width: 80%;
     font-size: 18px;
-    background-color: #1877f2;
     color: #fff;
     border: none;
     transition: background-color 0.3s ease;
-    text-align: center;
     text-transform: uppercase;
   }
   
-  ion-button:hover {
+  /* ion-button:hover {
     background-color: #1566e0;
-  }
+  } */
   
   /* ion-button:first-child {
     margin-bottom: 20px;

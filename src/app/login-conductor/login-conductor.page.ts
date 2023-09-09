@@ -32,7 +32,7 @@ export class LoginConductorPage implements OnInit {
   
     if (contraseñaCorrecta && contraseñaCorrecta === this.password) {
       console.log('Inicio de sesión exitoso');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home'], { queryParams: { datosUsuario: this.usuario } });
     } else {
       console.log('Credenciales incorrectas');
       const alert = await this.alertController.create({

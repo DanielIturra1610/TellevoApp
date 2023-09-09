@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>TeLlevo App</ion-title>
     <ion-avatar>
       <ion-img src="assets/img/images.png"></ion-img>
     </ion-avatar>
@@ -14,16 +13,24 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1>Selecciona tu perfil: </h1>
+  <h1>Selecciona tu perfil:</h1>
+  <br />
   <ion-card>
-    <ion-card-title>Usuario
+    <ion-card-title>
       <div class="ion-text-center">
-        <ion-button id="conductorButton" (click)="redirigeLoginConductor()">Conductor</ion-button>
-        <ion-button id="pasajeroButton" (click)="redirigeLoginPasajero()">Pasajero</ion-button>
+        <ion-button
+          id="conductorButton"
+          shape="round"
+          (click)="redirigeLoginConductor()"
+          >Conductor</ion-button
+        ><br />
+        <ion-button
+          id="pasajeroButton"
+          shape="round"
+          (click)="redirigeLoginPasajero()"
+          >Pasajero</ion-button
+        >
       </div>
-
     </ion-card-title>
-
   </ion-card>
-
 </ion-content>

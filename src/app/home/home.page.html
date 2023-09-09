@@ -1,60 +1,47 @@
 <ion-header [translucent]="true">
   <ion-menu side="end" id="menu"></ion-menu>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login-general"></ion-back-button>
+    </ion-buttons>
     <ion-title>Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información de Usuario</ion-card-title>
-    </ion-card-header>
+  <div class="ion-padding">
+    <h1>Bienvenido, {{ usuario }}.</h1>
 
-    <ion-card-content>
-      <ion-item>
-        <ion-label>Nombre:</ion-label>
-        <ion-text>Marco Navarrete</ion-text>
-      </ion-item>
+    <!-- Si el usuario es un pasajero -->
+    <div *ngIf="esPasajero">
+      <h4>Información Personal de Pasajero:</h4>
+      <ion-card>
+        <ion-card-content>
+          <ul>
+            <li><strong>Nombre:</strong> {{ informacionPersonal[usuario].nombre }}</li>
+            <li><strong>Edad:</strong> {{ informacionPersonal[usuario].edad }}</li>
+            <li><strong>Correo:</strong> {{ informacionPersonal[usuario].correo }}</li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+      <ion-button expand="full" (click)="irViajes()">Historial de Viajes</ion-button>
+    </div>
 
-      <ion-item>
-        <ion-label>Email:</ion-label>
-        <ion-text>marc.navarrete@duocuc.cl</ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Ubicación:</ion-label>
-        <ion-text>Puerto Montt, Chile</ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Teléfono:</ion-label>
-        <ion-text>+56 9 5342 4636</ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Fecha de Nacimiento:</ion-label>
-        <ion-text>10 de Enero de 2001</ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Género:</ion-label>
-        <ion-text>Masculino</ion-text>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Carrera:</ion-label>
-        <ion-text>Ingenieria informatica</ion-text>
-      </ion-item>
-      
-      <!-- Puedes agregar más detalles del usuario según sea necesario -->
-    </ion-card-content>
-  </ion-card>
-
-  <ion-button (click)="irViajes()">Solicitar viaje</ion-button>
-
-
-  <a href="#">Editar Perfil</a>
-
+    <!-- Si el usuario es un conductor -->
+    <div *ngIf="esConductor">
+      <p>Información Personal de Conductor:</p>
+      <ion-card>
+        <ion-card-content>
+          <ul>
+            <li><strong>Nombre:</strong> {{ informacionPersonal[usuario].nombre }}</li>
+            <li><strong>Edad:</strong> {{ informacionPersonal[usuario].edad }}</li>
+            <li><strong>Correo:</strong> {{ informacionPersonal[usuario].correo }}</li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+      <ion-button expand="full" >Solicitar Viaje</ion-button>
+    </div>
+  </div>
 </ion-content>
+
