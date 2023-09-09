@@ -34,9 +34,10 @@ const routes: Routes = [
   {
     path: 'login-pasajero',
     loadChildren: () => import('./login-pasajero/login-pasajero.module').then( m => m.LoginPasajeroPageModule)
-  },  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'pass-recovery',
+    loadChildren: () => import('./pass-recovery/pass-recovery.module').then( m => m.PassRecoveryPageModule)
   },
 
 

@@ -10,25 +10,22 @@ ion-content {
   
   ion-button {
     width: 80%;
-    padding: 10px 20px;
     font-size: 18px;
-    background-color: #1877f2; /* Azul de Facebook */
+    background-color: #1877f2;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
     text-transform: uppercase;
   }
   
   ion-button:hover {
-    background-color: #1566e0; /* Cambio de color al pasar el ratón */
+    background-color: #1566e0;
   }
   
-  ion-button:first-child {
+  /* ion-button:first-child {
     margin-bottom: 20px;
-  }
+  } */
 
 #seleccionPerfil {
   font-size: 3rem;

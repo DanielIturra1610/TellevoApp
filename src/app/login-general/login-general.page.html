@@ -11,10 +11,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1>Eres: </h1>
-  <div class="ion-text-center">
-    <ion-button id="conductorButton" (click)="redirigeLoginConductor()">Conductor</ion-button>
-    <ion-button id="pasajeroButton" (click)="redirigeLoginPasajero()">Pasajero</ion-button>
-  </div>
+  <h1>Selecciona tu perfil: </h1>
+  <ion-card>
+    <ion-card-title>Usuario
+      <div class="ion-text-center">
+        <ion-button id="conductorButton" (click)="redirigeLoginConductor()">Conductor</ion-button>
+        <ion-button id="pasajeroButton" (click)="redirigeLoginPasajero()">Pasajero</ion-button>
+      </div>
+
+    </ion-card-title>
+
+  </ion-card>
 
 </ion-content>
