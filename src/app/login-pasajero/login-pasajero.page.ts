@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login-pasajero',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPasajeroPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
   }
+
+  
 
 }
