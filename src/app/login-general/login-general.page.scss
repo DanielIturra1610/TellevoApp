@@ -6,6 +6,7 @@ ion-content {
     background-color: #f0f2f5;
     padding: 20px;
     height: 100vh;
+    top: 50px;
   }
   
   ion-button {
@@ -30,10 +31,18 @@ ion-content {
     margin-bottom: 20px;
   }
 
-#seleccionPerfil {
-  font-size: 3rem;
-  text-align: center;
-}
+  ion-avatar {
+    padding: auto;
+    display: flex;
+    width: 200px;
+    bottom: 200px;
+    margin: auto;
+    border-color: #1566e0;
+    border: 10px;
+  }
+  
+  
+
 
   
   
