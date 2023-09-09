@@ -17,10 +17,10 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-          <ion-input 
+          <ion-input
+            id="usuario"
             type="text" 
-            ngModel 
-            text 
+            [(ngModel)]="usuario" 
             maxLength="30" 
             required
           ></ion-input>
@@ -28,16 +28,16 @@
 
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-          <ion-input 
+          <ion-input
+            id="password" 
             type="password" 
-            ngModel 
-            password 
+            [(ngModel)]="password" 
             maxLength="20" 
             required
           ></ion-input>
       </ion-item>
 
-      <ion-button expand="block" shape="round">Iniciar sesión<ion-icon name="log-in-outline"></ion-icon></ion-button>
+      <ion-button expand="block" shape="round" (click)="login()">Iniciar sesión<ion-icon name="log-in-outline"></ion-icon></ion-button>
 
       <ion-label class="olvidaste-contrasena">
         <a href="#">¿Olvidaste tu contraseña?</a>
