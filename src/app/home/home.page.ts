@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginPasajeroPageRoutingModule } from '../login-pasajero/login-pasajero-routing.module';
 
 @Component({
   selector: 'app-home',
@@ -19,15 +20,40 @@ export class HomePage implements OnInit {
   esPasajero: boolean = false;
   esConductor: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {
+    console.log('Se cargó el constructor');
+  }
+
+    
 
   ngOnInit() {
-    // Obtener el nombre de usuario del parámetro de la ruta
+    
     this.route.queryParams.subscribe((params) => {
       this.usuario = params['datosUsuario'];
       this.esPasajero = this.usuario.startsWith('pasajero');
       this.esConductor = this.usuario.startsWith('conductor');
+      console.log('Se cargó ngOnInit')
     });
+  }
+
+  ionViewWillEnter(){
+    console.log('Se cargó ionViewWillEnter')
+  }
+
+  ionViewDidEnter(){
+    console.log('Se cargó ionViewDidEnter')
+  }
+
+  ionViewWillLeave(){
+    console.log("Se cargó ionViewWillLeave")
+  }
+
+  ionViewDidLeave(){
+    console.log("Se cargó ionViewDidLeave");
+  }
+
+  ngOnDestroy(){
+    console.log("Se cargó ngOnDestroy");
   }
 
   irViajes() {
