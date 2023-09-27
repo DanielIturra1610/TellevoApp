@@ -26,6 +26,15 @@
         </ion-card-content>
       </ion-card>
       <ion-button expand="full" (click)="irViajes()">Historial de Viajes</ion-button>
+      <ion-button expand="block" (click)="enviarDatos()">
+        <ion-icon name="send-outline"></ion-icon>ENVIAR DATOS
+      </ion-button>
+      <ion-button expand="block" (click)="eliminarDatos()">
+        <ion-icon name="send-outline"></ion-icon>ELIMINAR DATOS
+      </ion-button>
+      <ion-button expand="block" (click)="limpiarDatos()">
+        <ion-icon name="send-outline"></ion-icon>LIMPIAR DATOS
+      </ion-button>
     </div>
 
     <!-- Si el usuario es un conductor -->
@@ -41,6 +50,16 @@
         </ion-card-content>
       </ion-card>
       <ion-button expand="full" >Solicitar Viaje</ion-button>
+
+      <ion-button expand="block" (click)="enviarDatos()">
+        <ion-icon name="send-outline"></ion-icon>ENVIAR DATOS
+      </ion-button>
+      <ion-button expand="block" (click)="eliminarDatos()">
+        <ion-icon name="send-outline"></ion-icon>ELIMINAR DATOS
+      </ion-button>
+      <ion-button expand="block" (click)="limpiarDatos()">
+        <ion-icon name="send-outline"></ion-icon>LIMPIAR DATOS
+      </ion-button>
     </div>
   </div>
 </ion-content>

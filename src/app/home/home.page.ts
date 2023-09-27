@@ -24,10 +24,11 @@ export class HomePage implements OnInit {
     console.log('Se cargó el constructor');
   }
 
-    
+ nombre=localStorage.getItem('Nombre de usuario')   
 
   ngOnInit() {
     
+    console.log('Nombre de usuario: ', this.nombre)
     this.route.queryParams.subscribe((params) => {
       this.usuario = params['datosUsuario'];
       this.esPasajero = this.usuario.startsWith('pasajero');
@@ -54,6 +55,21 @@ export class HomePage implements OnInit {
 
   ngOnDestroy(){
     console.log("Se cargó ngOnDestroy");
+  }
+
+  enviarDatos(){
+    localStorage.setItem('Nombre de usuario', this.usuario);
+    this.router.navigate(['/registro'])
+  }
+
+  eliminarDatos(){
+    localStorage.removeItem('Nombre de usuario');
+    this.router.navigate(['/login-general'])
+  }
+
+  limpiarDatos(){
+    localStorage.clear();
+    this.router.navigate(['/login-general'])
   }
 
   irViajes() {
