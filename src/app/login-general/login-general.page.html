@@ -1,36 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-avatar>
-      <ion-img src="assets/img/images.png"></ion-img>
-    </ion-avatar>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-avatar class="custom-avatar">
+        <ion-img src="assets/img/images.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>TeLlevo App</ion-title>
+    <ion-buttons slot="end">
+      <ion-avatar class="custom-avatar">
+        <ion-img src="assets/img/logo-duoc.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar id="seleccionPerfil">
+    <ion-toolbar color="primary">
       <ion-title size="large">Selecciona tu perfil</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <h1>Selecciona tu perfil:</h1>
-  <br />
-  <ion-card>
-    <ion-card-title>
-      <div class="ion-text-center">
-        <ion-button
-          id="conductorButton"
-          shape="round"
-          (click)="redirigeLoginConductor()"
-          >Conductor</ion-button
-        ><br />
-        <ion-button
-          id="pasajeroButton"
-          shape="round"
-          (click)="redirigeLoginPasajero()"
-          >Pasajero</ion-button
-        >
-      </div>
-    </ion-card-title>
-  </ion-card>
+  <div class="content-container">
+    <h1>¿Cómo deseas usar TeLlevo hoy?</h1>
+    <ion-card>
+      <ion-card-content>
+        <div class="button-container">
+          <ion-button expand="block" color="secondary" shape="round" (click)="redirigeLoginConductor()">
+            <ion-icon name="car-sport-outline" slot="start"></ion-icon>
+            Conductor
+          </ion-button>
+          <ion-button expand="block" color="tertiary" shape="round" (click)="redirigeLoginPasajero()">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            Pasajero
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+

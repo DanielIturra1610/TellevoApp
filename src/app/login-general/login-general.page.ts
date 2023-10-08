@@ -10,7 +10,7 @@ export class LoginGeneralPage implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   redirigeLoginPasajero() {
     this.router.navigate(['/login-pasajero']);

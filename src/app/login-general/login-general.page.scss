@@ -1,43 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 ion-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f2f5;
-    padding: 20px;
-    height: 100vh;
-    top: 50px;
-  }
-  
-  ion-button {
-    width: 80%;
-    font-size: 18px;
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-  }
-  
-  /* ion-button:hover {
-    background-color: #1566e0;
-  } */
-  
-  /* ion-button:first-child {
-    margin-bottom: 20px;
-  } */
+  --background: linear-gradient(to top, #ffffff 0%, #eaff00 100%);
+  --color: #006064;
+}
 
-  ion-avatar {
-    padding: auto;
-    display: flex;
-    width: 200px;
-    bottom: 200px;
-    margin: auto;
-    border-color: #1566e0;
-    border: 10px;
-  }
-  
-  
+.content-container {
+  padding: 20px;
+}
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-  
-  
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  transition: transform 0.2s;
+}
+
+ion-card:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  text-align: center;
+  color: #006064;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.custom-avatar {
+  width: 125px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-avatar ion-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+ion-button {
+  color: white;
+}

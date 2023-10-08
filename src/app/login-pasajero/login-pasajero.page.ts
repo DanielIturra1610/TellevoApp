@@ -44,4 +44,7 @@ export class LoginPasajeroPage implements OnInit {
     }
   }
   
+  async registrar() {
+    this.router.navigate(['/registro']);
+  }
 }

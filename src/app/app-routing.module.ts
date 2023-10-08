@@ -15,10 +15,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     canActivate: [IngresadoGuard]
@@ -44,6 +40,10 @@ const routes: Routes = [
   {
     path: 'pass-recovery',
     loadChildren: () => import('./pass-recovery/pass-recovery.module').then( m => m.PassRecoveryPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
     path: '**',

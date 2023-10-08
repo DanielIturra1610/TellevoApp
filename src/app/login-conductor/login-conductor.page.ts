@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoginConductorPage implements OnInit {
   usuario: string = '';
   password: string = '';  
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController, route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -42,5 +42,9 @@ export class LoginConductorPage implements OnInit {
       });
       await alert.present();
     }
+  }
+
+  registro() {
+    this.router.navigate(['/registro']);
   }
 }

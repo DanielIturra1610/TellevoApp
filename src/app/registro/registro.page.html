@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login-general" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Registro</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>¿Ya tienes una cuenta?</ion-label>
+        <ion-button shape="round" color="primary" [routerLink]="['/login-general']"
+          >Inicia Sesión</ion-button
+        >
+        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-input
+          id="usuario"
+          type="text"
+          [(ngModel)]="usuario"
+          maxLength="100"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombres y Apellidos</ion-label>
+        <ion-input
+          id="nombre"
+          type="text"
+          [(ngModel)]="nombre"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" [(ngModel)]="edad" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>¿Eres conductor?</ion-label>
+        <ion-toggle [(ngModel)]="conductor"></ion-toggle>
+      </ion-item>
+    </ion-card-content>
+    <ion-button expand="block" shape="round" (click)="registrar()">Registrarse</ion-button>
+  </ion-card>
+</ion-content>

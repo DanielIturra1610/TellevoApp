@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login-general"></ion-back-button>
+      <ion-back-button defaultHref="/login-general" icon="arrow-back-outline"></ion-back-button>
     </ion-buttons>
     <ion-title>Ingreso Conductores</ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   
@@ -38,6 +39,7 @@
       </ion-item>
 
       <ion-button expand="block" shape="round" (click)="login()">Iniciar sesión<ion-icon name="log-in-outline"></ion-icon></ion-button>
+      <ion-button expand="block" shape="round" (click)="registro()">Registrarse<ion-icon name="person-circle-outline"></ion-icon></ion-button>
 
       <ion-label class="olvidaste-contrasena">
         <br><a [routerLink]="['/pass-recovery']">¿Olvidaste tu contraseña?</a>
