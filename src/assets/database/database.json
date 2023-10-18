@@ -1,0 +1,24 @@
+{
+  "personas": [
+    {
+      "nombreUsuario": "hernuzz",
+      "nombres": "Hernán ",
+      "apellidos": "Garrido",
+      "edad": 38,
+      "correo": "hernan@hernan.com",
+      "contrasena": "12345",
+      "conductor": "0",
+      "id": 1
+    },
+    {
+      "nombreUsuario": "her",
+      "nombres": "asd",
+      "apellidos": "sdf",
+      "edad": 32,
+      "correo": "asd@dfg.com",
+      "contrasena": "1234",
+      "conductor": "0",
+      "id": 2
+    }
+  ]
+}

@@ -38,18 +38,19 @@ const routes: Routes = [
     canActivate: [NoIngresadoGuard]
   },
   {
-    path: 'pass-recovery',
-    loadChildren: () => import('./pass-recovery/pass-recovery.module').then( m => m.PassRecoveryPageModule)
-  },
-  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'mostrar-posts',
+    loadChildren: () => import('./mostrar-posts/mostrar-posts.module').then( m => m.MostrarPostsPageModule)
   },
   {
     path: '**',
     component: NotFoundPage,
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
+
 
 
 

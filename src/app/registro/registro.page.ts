@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
-import { DatabaseService } from 'src/assets/database.service';
+
+import { UserService } from '../usuario.service';
+import { IRegistro } from './interface/IRegistro';
+import { AlertController, NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-registro',
@@ -9,37 +12,57 @@ import { DatabaseService } from 'src/assets/database.service';
 })
 export class RegistroPage implements OnInit {
 
-  usuario: string = '';
-  nombre: string = '';
-  edad: number = 0;
-  correo: string = '';
-  password: string = '';
-  conductor: boolean = false;
+  registro: IRegistro = {
+    nombreUsuario: "",
+    nombres: "",
+    apellidos: "",
+    edad: 0,
+    correo: "",
+    contrasena: "",
+    conductor: ""  }
 
-  constructor(private databaseService: DatabaseService, route: ActivatedRoute, router: Router) {}
+  constructor(private userServ: UserService,
+              private alertController: AlertController,
+              private navCtrl: NavController) {}
 
   ngOnInit() {
-    this.databaseService.crearBD();
   }
 
   async registrar() {
-    const usuario = {
-      usuario: this.usuario,
-      nombre: this.nombre,
-      edad: this.edad,
-      correo: this.correo,
-      password: this.password,
-      conductor: this.conductor
-    };
-
-    try {
-      await this.databaseService.crearUsuario(usuario);
-      console.log("Usuario registrado exitosamente");
-      
-    } catch (error) {
-      console.error("Error al registrar el usuario:", error);
-      
+    if (!this.registro.nombreUsuario || !this.registro.nombres || !this.registro.apellidos || !this.registro.edad || !this.registro.correo || !this.registro.contrasena || !this.registro.conductor) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Todos los datos son obligatorios.',
+        buttons: ['OK']
+      });
+      await alert.present();
+      return;
     }
+
+    console.log("Registrando...")
+    this.userServ.registrarServicio(this.registro)
+    .subscribe( async persona => {console.log("ReciboPage", persona);
+      const alert = await this.alertController.create({
+        header: 'Registro',
+        message: 'Usuario registrado',
+        buttons: ['OK']
+      });
+      await alert.present();
+
+      setTimeout(() => {
+        this.navCtrl.navigateForward('/home');
+      }, 3000);
+      })
+  }
+
+  async mostrarPosts(){
+    this.userServ.getPosts().subscribe({
+      next: (res: any[]) => {
+        console.log(res[0]);
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    });
   }
 }
-

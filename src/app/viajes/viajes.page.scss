@@ -1,45 +1,33 @@
-/* Estilos para el título de la página */
-ion-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Estilos para los elementos de la lista */
-  ion-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilos para los títulos de viaje */
-  h2 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Estilos para los detalles de viaje */
-  p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0;
-  }
-  
-  /* Estilos para el encabezado cuando se colapsa */
-  ion-header[condense] {
-    ion-toolbar {
-      background-color: #333;
-    }
-    
-    ion-title {
-      font-size: 16px;
-      margin-top: 0;
-    }
-  }
-  
+ion-content {
+  --background: #f4f5f8; // Un fondo más claro para un aspecto limpio
+}
+
+ion-header {
+  --background: #007aff; // Color de fondo para el encabezado
+  --color: #ffffff; // Color del texto del encabezado
+}
+
+ion-toolbar {
+  --border-width: 0; // Elimina el borde inferior del encabezado
+}
+
+ion-list {
+  margin-top: 20px;
+}
+
+ion-item {
+  border-radius: 10px; // Bordes redondeados para los elementos de la lista
+  margin-bottom: 10px;
+  --background: #ffffff; // Fondo blanco para los elementos de la lista
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra sutil para los elementos de la lista
+}
+
+h2 {
+  color: #007aff; // Color principal para los títulos de los viajes
+  font-weight: bold;
+}
+
+p {
+  color: #555; // Color oscuro para el texto de origen y destino
+  font-size: 0.9em; // Tamaño de fuente más pequeño para el texto de origen y destino
+}

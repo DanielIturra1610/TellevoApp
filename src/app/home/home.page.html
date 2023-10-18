@@ -4,61 +4,40 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/login-general"></ion-back-button>
     </ion-buttons>
-    <ion-title>Mi Perfil</ion-title>
+    <ion-title>Perfil de Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
-    <h1>Bienvenido, {{ usuario }}.</h1>
+    <h1>Bienvenido, {{ persona.nombreUsuario }}.</h1>
 
-    <!-- Si el usuario es un pasajero -->
-    <div *ngIf="esPasajero">
-      <h4>Información Personal de Pasajero:</h4>
+    <div>
       <ion-card>
+        <ion-card-header>
+          <ion-card-title>Información Personal</ion-card-title>
+        </ion-card-header>
         <ion-card-content>
-          <ul>
-            <li><strong>Nombre:</strong> {{ informacionPersonal[usuario].nombre }}</li>
-            <li><strong>Edad:</strong> {{ informacionPersonal[usuario].edad }}</li>
-            <li><strong>Correo:</strong> {{ informacionPersonal[usuario].correo }}</li>
-          </ul>
+          <ion-list lines="none">
+            <p><strong>Nombre de Usuario:</strong> {{ persona.nombreUsuario }}</p>
+            <p><strong>Nombres:</strong> {{ persona.nombres }}</p>
+            <p><strong>Apellidos:</strong> {{ persona.apellidos }}</p>
+            <p><strong>Edad:</strong> {{ persona.edad }}</p>
+            <p><strong>Correo:</strong> {{ persona.correo }}</p>
+            <p><strong>Conductor:</strong> {{ persona.conductor === "1" ? "Sí" : "No" }}</p>
+          </ion-list>
         </ion-card-content>
       </ion-card>
-      <ion-button expand="full" (click)="irViajes()">Historial de Viajes</ion-button>
-      <ion-button expand="block" (click)="enviarDatos()">
+      <ion-button expand="full" color="primary" (click)="irViajes()">Historial de Viajes</ion-button>
+      <ion-button expand="block" color="success">
         <ion-icon name="send-outline"></ion-icon>ENVIAR DATOS
       </ion-button>
-      <ion-button expand="block" (click)="eliminarDatos()">
-        <ion-icon name="send-outline"></ion-icon>ELIMINAR DATOS
+      <ion-button expand="block" color="danger">
+        <ion-icon name="trash-outline"></ion-icon>ELIMINAR DATOS
       </ion-button>
-      <ion-button expand="block" (click)="limpiarDatos()">
-        <ion-icon name="send-outline"></ion-icon>LIMPIAR DATOS
-      </ion-button>
-    </div>
-
-    <!-- Si el usuario es un conductor -->
-    <div *ngIf="esConductor">
-      <p>Información Personal de Conductor:</p>
-      <ion-card>
-        <ion-card-content>
-          <ul>
-            <li><strong>Nombre:</strong> {{ informacionPersonal[usuario].nombre }}</li>
-            <li><strong>Edad:</strong> {{ informacionPersonal[usuario].edad }}</li>
-            <li><strong>Correo:</strong> {{ informacionPersonal[usuario].correo }}</li>
-          </ul>
-        </ion-card-content>
-      </ion-card>
-      <ion-button expand="full" >Solicitar Viaje</ion-button>
-
-      <ion-button expand="block" (click)="enviarDatos()">
-        <ion-icon name="send-outline"></ion-icon>ENVIAR DATOS
-      </ion-button>
-      <ion-button expand="block" (click)="eliminarDatos()">
-        <ion-icon name="send-outline"></ion-icon>ELIMINAR DATOS
-      </ion-button>
-      <ion-button expand="block" (click)="limpiarDatos()">
-        <ion-icon name="send-outline"></ion-icon>LIMPIAR DATOS
+      <ion-button expand="block" color="medium">
+        <ion-icon name="refresh-outline"></ion-icon>LIMPIAR DATOS
       </ion-button>
     </div>
   </div>
