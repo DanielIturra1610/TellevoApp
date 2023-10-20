@@ -11,7 +11,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
-    <h1>Bienvenido, {{ persona.nombreUsuario }}.</h1>
+    <h1>Bienvenido, {{ registro.nombreUsuario }}.</h1>
 
     <div>
       <ion-card>
@@ -20,12 +20,12 @@
         </ion-card-header>
         <ion-card-content>
           <ion-list lines="none">
-            <p><strong>Nombre de Usuario:</strong> {{ persona.nombreUsuario }}</p>
-            <p><strong>Nombres:</strong> {{ persona.nombres }}</p>
-            <p><strong>Apellidos:</strong> {{ persona.apellidos }}</p>
-            <p><strong>Edad:</strong> {{ persona.edad }}</p>
-            <p><strong>Correo:</strong> {{ persona.correo }}</p>
-            <p><strong>Conductor:</strong> {{ persona.conductor === "1" ? "Sí" : "No" }}</p>
+            <p><strong>Nombre de Usuario:</strong> {{ registro.nombreUsuario }}</p>
+            <p><strong>Nombres:</strong> {{ registro.nombres }}</p>
+            <p><strong>Apellidos:</strong> {{ registro.apellidos }}</p>
+            <p><strong>Edad:</strong> {{ registro.edad }}</p>
+            <p><strong>Correo:</strong> {{ registro.correo }}</p>
+            <p><strong>Conductor:</strong> {{ registro.conductor === "1" ? "Sí" : "No" }}</p>
           </ion-list>
         </ion-card-content>
       </ion-card>

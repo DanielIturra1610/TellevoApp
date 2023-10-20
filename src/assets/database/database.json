@@ -11,14 +11,44 @@
       "id": 1
     },
     {
-      "nombreUsuario": "her",
-      "nombres": "asd",
-      "apellidos": "sdf",
-      "edad": 32,
-      "correo": "asd@dfg.com",
-      "contrasena": "1234",
+      "nombreUsuario": "jorgito23",
+      "nombres": "Jorge",
+      "apellidos": "González",
+      "edad": 23,
+      "correo": "jgonza@gmail.com",
+      "contrasena": "12345",
       "conductor": "0",
       "id": 2
+    },
+    {
+      "nombreUsuario": "her234",
+      "nombres": "Herny",
+      "apellidos": "Jorg",
+      "edad": 34,
+      "correo": "herny@gmail.com",
+      "contrasena": "123456",
+      "conductor": "0",
+      "id": 3
+    },
+    {
+      "nombreUsuario": "angel12",
+      "nombres": "angel",
+      "apellidos": "morra",
+      "edad": 34,
+      "correo": "ang@gmail.com",
+      "contrasena": "asd123",
+      "conductor": "0",
+      "id": 4
+    },
+    {
+      "nombreUsuario": "hernuz23",
+      "nombres": "Her",
+      "apellidos": "Gar",
+      "edad": 23,
+      "correo": "her@gmail.com",
+      "contrasena": "asdfgh",
+      "conductor": "1",
+      "id": 5
     }
   ]
 }

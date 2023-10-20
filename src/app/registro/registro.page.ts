@@ -48,21 +48,8 @@ export class RegistroPage implements OnInit {
         buttons: ['OK']
       });
       await alert.present();
-
-      setTimeout(() => {
-        this.navCtrl.navigateForward('/home');
-      }, 3000);
+      this.navCtrl.navigateForward('/login-general');
       })
   }
 
-  async mostrarPosts(){
-    this.userServ.getPosts().subscribe({
-      next: (res: any[]) => {
-        console.log(res[0]);
-      },
-      error: (error: any) => {
-        console.log(error);
-      }
-    });
-  }
 }

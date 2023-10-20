@@ -42,10 +42,6 @@ const routes: Routes = [
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'mostrar-posts',
-    loadChildren: () => import('./mostrar-posts/mostrar-posts.module').then( m => m.MostrarPostsPageModule)
-  },
-  {
     path: '**',
     component: NotFoundPage,
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)

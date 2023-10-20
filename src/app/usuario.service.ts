@@ -1,22 +1,14 @@
 import { Injectable } from '@angular/core';
 import { IRegistro } from './registro/interface/IRegistro';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { retry, catchError } from 'rxjs/operators'
-import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':'*',
-    })
-  }
 
-  apiURL = 'https://jsonplaceholder.typicode.com'
   private baseUrl: string = "http://localhost:3000";
 
 
@@ -29,44 +21,19 @@ export class UserService {
     //.subscribe( persona => {console.log("Recibo Service", persona)});
   }
 
-  getPosts(): Observable<any> {
-    return this.http.get(this.apiURL+'/posts/').pipe(
-      retry(3),
-      catchError(this.handleError)      
-    );
+  actualizarServicio(id: String, registro: IRegistro): Observable<IRegistro>{
+    console.log("Actualizando (Servicio)...", registro)
+    const stUrl = `${ this.baseUrl }/personas`;
+    return this.http.put<IRegistro>(stUrl, registro);
   }
 
-  private handleError(error: HttpErrorResponse): Observable<never> {
-    if (error.error instanceof ErrorEvent) {
-      console.error('Ocurrió un error:', error.error.message);
-    } else {
-      console.error(`El servidor retornó el código ${error.status}, ` + `cuerpo: ${error.error}`);
-    }
-    return throwError('Algo malo ocurrió; por favor, inténtalo de nuevo más tarde.');
+  obtenerNombreUsuarioServicio(nombreUsuario: string): Observable<IRegistro> {
+    console.log("Obteniendo Nombre de Usuario (Servicio)...", nombreUsuario)
+    const stUrl = `${ this.baseUrl }/personas?nombreUsuario${ nombreUsuario }`;
+    return this.http.get<IRegistro>(stUrl); 
   }
 
-  getPost(id: any): Observable<any> {
-    return this.http.get(this.apiURL+'/posts/'+id).pipe(
-      retry(3),
-      catchError(this.handleError)
-    ); 
-  }
+  eliminarServicio(){}
 
-  createPost(post: any):Observable<any>{
-    return this.http.post(this.apiURL+'/posts',post,this.httpOptions).pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
-  }
 
-  updatePost(id: any,post: any):Observable<any>{
-    return this.http.put(this.apiURL+'/posts/'+id,post,this.httpOptions).
-      pipe(retry(3),
-      catchError(this.handleError)
-    );
-  }
-
-  deletePost(id: any):Observable<any>{
-    return this.http.delete(this.apiURL+'/posts/'+id,this.httpOptions);
-  }
 }

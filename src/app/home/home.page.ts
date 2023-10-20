@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../usuario.service';
 
 import data from 'src/assets/database/database.json'
+import { IRegistro } from '../registro/interface/IRegistro';
 
 
 @Component({
@@ -11,20 +12,29 @@ import data from 'src/assets/database/database.json'
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  persona = data.personas[0];
+  registro: IRegistro = {
+    nombreUsuario: "",
+    nombres: "",
+    apellidos: "",
+    edad: 0,
+    correo: "",
+    contrasena: "",
+    conductor: ""  }
+
+  id = ""
   
 
   constructor(private route: ActivatedRoute, private router: Router, private userServ: UserService) {
     console.log('Se cargó el constructor');
 
-    this.userServ.getPosts().subscribe({
+    /* this.userServ.getPosts().subscribe({
       next: (res: any[]) => {
         console.log(res[0]);
       },
       error: (error: any) => {
         console.log(error);
       }
-    });
+    }); */
      
   }
 
@@ -34,7 +44,25 @@ export class HomePage implements OnInit {
       console.log('Se cargó ngOnInit')
     };
 
-
+  actualizarNombreUsuario(nombreUsuario: string, registroActualizado: IRegistro){
+    this.userServ.obtenerNombreUsuarioServicio(nombreUsuario)
+      .subscribe({
+        next: usuario => {
+          this.userServ.actualizarServicio(this.id, registroActualizado)
+            .subscribe({
+              next: response => {
+                console.log('Registro actualizado', response);
+              },
+              error: error => {
+                console.log('Hubo un error al actualizar el registro', error);
+              }
+            });
+        },
+        error: error => {
+          console.log('Hubo un error al obtener el registro', error);
+        }
+      });
+  }
   ionViewWillEnter(){
     console.log('Se cargó ionViewWillEnter');
   }
