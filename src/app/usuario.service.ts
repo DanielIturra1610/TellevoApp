@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IRegistro } from './registro/interface/IRegistro';
 import { HttpClient } from '@angular/common/http';
-import { Observable} from 'rxjs';
+import { Observable, map} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,6 @@ export class UserService {
     console.log("Registrando (Servicio)...", reg)
     const stUrl = `${ this.baseUrl }/personas`
     return this.http.post<IRegistro>(stUrl, reg);
-    //.subscribe( persona => {console.log("Recibo Service", persona)});
   }
 
   actualizarServicio(id: String, registro: IRegistro): Observable<IRegistro>{
@@ -33,7 +32,19 @@ export class UserService {
     return this.http.get<IRegistro>(stUrl); 
   }
 
-  eliminarServicio(){}
+
+  obtenerIdPorNombreUsuario(nombreUsuario: string): Observable<number> {
+    const stUrl = `${ this.baseUrl }/personas?nombreUsuario=${nombreUsuario}`;
+    return this.http.get<any[]>(stUrl).pipe(
+      map(res => {
+        if (res && res.length > 0) {
+          return res[0].id; 
+        }
+        return null; 
+      })
+    );
+  }
+
 
 
 }
